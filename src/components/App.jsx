@@ -1,57 +1,27 @@
-import logo from '../images/logo.svg';
-
+import React, { useState } from "react";
+import Header from "./Header/Header";
+import Main from "./Main/Main";
+import Footer from "./Footer/Footer";
+import ImagePopup from "./ImagePopup/ImagePopup";
 
 function App() {
+  const [selectedCard, setSelectedCard] = useState(null);
+  const handleCloseImagePopup = () => {
+    setSelectedCard(null);
+  };
+  
   return (
     <div className="page">
-      <header className="header">
-        <img src={logo} alt="logo-page" className="header__image" />
-      </header>
+      <Header />
+      <Main />
+      <Footer />
+    
 
-      <main className="main">
-        <div className="main__profile">
-          <div className="main__content-image">
-            <img
-              src="./images/me.jpg"
-              alt="profile-image"
-              className="main__profile-image"
-            />
-            <div className="main__profile-edit-icon"></div>
-          </div>
-
-          <div className="main__content-paragraph">
-            <p className="main__paragraph main__paragraph_name">
-              Alejandra Toro Arcila
-            </p>
-            <p className="main__paragraph main__paragraph_about">
-              Estudiante
-            </p>
-            <button
-              type="button"
-              className="main__button main__button_edit"
-            >
-              🖌
-            </button>
-          </div>
-
-          <button
-            type="button"
-            className="main__button main__button_add"
-          >
-            🞣
-          </button>
-        </div>
-
-        <div className="main__gallery"></div>
-      </main>
-
-      <footer className="footer">
-        <p className="footer__copyright">
-          &copy; 2025 Around The U.S.
-        </p>
-      </footer>
-    </div>
-  );
+{selectedCard && (
+        <ImagePopup card={selectedCard} onClose={handleCloseImagePopup} />  
+        )}
+</div>
+);
 }
 
-export default App;
+export default App;  
