@@ -1,18 +1,12 @@
 import React from "react";
 
 export default function ImagePopup({ card, onClose }) {
+  if (!card) {
+    return null;
+  }
   return (
     <div className="popup popup_type_image">
-      <div className="popup__content popup__content_content_image">
-        <button
-          type="button"
-          className="popup__close"
-          aria-label="Close popup"
-          onClick={onClose}
-        >
-          🞩
-        </button>
-
+      <div className="popup__image-wrapper">
         <img
           className="popup__image"
           src={card.link}

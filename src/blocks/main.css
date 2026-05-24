@@ -23,14 +23,14 @@
   transform: translate(-50%, -50%);
   width: 26px;
   height: 26px;
-  background: rgba(0, 0, 0, 0.253) url(../images/edit-icon.svg) center no-repeat;
+  background: rgb(255, 254, 254) url(../images/edit-icon.svg) center no-repeat;
   background-size: contain;
   cursor: pointer;
 }
 
 .main__content-image:hover .main__profile-edit-icon {
   display: block;
-  background-color: rgba(0, 0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.356);
   
 }
 
@@ -46,6 +46,7 @@
     object-fit: cover;
     background-position: center;
     margin-right: 29px;
+    background-image: url(../images/me.jpg);
 }
 
 .main__content-paragraph {
@@ -106,14 +107,10 @@
 }
 
 .main__gallery {
- display: grid;
-    justify-content: center;
-    grid-gap: 20px 17px;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-  grid-template-columns: repeat(auto-fit, minmax(282px, 1fr));
+  max-width: 880px;
+  margin: auto;
 }
+
 
 .main__gallery-card {
      font-family: "Inter", Arial, sans-serif;
@@ -134,6 +131,17 @@
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 }
+
+.main__gallery-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(282px, 1fr));
+  gap: 20px 17px;
+
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
 
 .main__gallery-image:hover {
   opacity: 0.9;
